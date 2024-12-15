@@ -18,6 +18,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -32,6 +33,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -41,6 +43,7 @@ import androidx.navigation.NavController
 import com.example.hubxapp.R
 import com.example.hubxapp.data.entity.FeatureModel
 import com.example.hubxapp.data.entity.OnBoardModel
+import com.example.hubxapp.ui.anim.FreeTrialAnimation
 import com.example.hubxapp.ui.theme.Black
 import com.example.hubxapp.ui.theme.DarkGray
 import com.example.hubxapp.ui.theme.DarkGreen
@@ -71,6 +74,7 @@ fun PaywallItem(onBoardModel: OnBoardModel, navController: NavController, onBoar
 
     //RadioButton seçenekleri state değişkeni
     val premiumOption = remember { mutableStateOf(2) }
+    val freeTrialAlertVisible = remember { mutableStateOf(false) }
 
     Column(modifier = Modifier
         .fillMaxSize()
@@ -305,7 +309,7 @@ fun PaywallItem(onBoardModel: OnBoardModel, navController: NavController, onBoar
         ){
             Button(
                 onClick = {
-
+                    freeTrialAlertVisible.value = true
                 },
                 colors = ButtonDefaults.buttonColors(containerColor = MainColor),
                 shape = RoundedCornerShape(8.dp),
@@ -325,6 +329,46 @@ fun PaywallItem(onBoardModel: OnBoardModel, navController: NavController, onBoar
                 ),
                 modifier = Modifier
                     .padding(start = 32.dp, end = 32.dp)
+            )
+        }
+        if(freeTrialAlertVisible.value){
+            AlertDialog(
+                onDismissRequest = { freeTrialAlertVisible.value = false },
+                title = {
+                    Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
+                        FreeTrialAnimation(animationResource = R.raw.free_trial_animation1)
+                        FreeTrialAnimation(animationResource = R.raw.free_trial_animation2)
+                    }
+                },
+                text = {
+                    Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
+                        Text(
+                            text = stringResource(id = R.string.freeTrialAlertDescription),
+                            style = TextStyle(
+                                fontSize = 16.sp,
+                                color = Black,
+                            ),
+                            textAlign = TextAlign.Center
+                        )
+                    }
+                },
+                confirmButton = {
+                    Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
+                        Button(
+                            onClick = {
+                                freeTrialAlertVisible.value = false
+                            },
+                            colors = ButtonDefaults.buttonColors(containerColor = MainColor),
+                            shape = RoundedCornerShape(8.dp),
+                            modifier = Modifier
+                                .padding(all = 10.dp)
+                                .width(250.dp)
+                                .height(60.dp)
+                        ) {
+                            Text(text = stringResource(id = R.string.freeTrialAlertButton), color = White, fontSize = 16.sp)
+                        }
+                    }
+                }
             )
         }
     }

@@ -94,4 +94,6 @@ dependencies {
     implementation ("com.github.skydoves:landscapist-glide:1.4.4")
     //Icons
     implementation( "androidx.compose.material:material-icons-extended" )
+    //Lottie
+    implementation("com.airbnb.android:lottie-compose:4.0.0")
 }

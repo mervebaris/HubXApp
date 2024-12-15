@@ -15,4 +15,6 @@
     <string name="yearlyOption">1 Year</string>
     <string name="yearlyOptionDescription">First 3 days free, then $529,99/year</string>
     <string name="discountText">Save %50</string>
+    <string name="freeTrialAlertButton">OK</string>
+    <string name="freeTrialAlertDescription">Congratulations!\nYour 3-day trial period has started.</string>
 </resources>
