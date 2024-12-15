@@ -10,4 +10,9 @@
     <string name="diagnose">Diagnose</string>
     <string name="myGarden">My Garden</string>
     <string name="profile">Profile</string>
+    <string name="monthlyOption">1 Month</string>
+    <string name="monthlyOptionDescription">$2.99/month, auto renewable</string>
+    <string name="yearlyOption">1 Year</string>
+    <string name="yearlyOptionDescription">First 3 days free, then $529,99/year</string>
+    <string name="discountText">Save %50</string>
 </resources>
