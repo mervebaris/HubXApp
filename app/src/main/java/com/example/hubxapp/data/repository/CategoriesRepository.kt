@@ -5,4 +5,5 @@ import com.example.hubxapp.data.entity.Categories
 
 class CategoriesRepository(var categoriesDataSource: CategoriesDataSource) {
     suspend fun loadCategories() : List<Categories> = categoriesDataSource.loadCategories()
+    suspend fun searchCategories(searchWord: String) : List<Categories> = categoriesDataSource.searchCategories(searchWord)
 }

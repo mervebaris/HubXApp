@@ -30,6 +30,12 @@ class HomeScreenViewModel @Inject constructor(var categoriesRepository: Categori
         }
     }
 
+    fun searchCategories(searchWord:String){
+        CoroutineScope(Dispatchers.Main).launch {
+            categoriesList.value = categoriesRepository.searchCategories(searchWord)
+        }
+    }
+
     fun loadQuestions(){
         CoroutineScope(Dispatchers.Main).launch {
             questionsList.value = questionsRepository.loadQuestions()

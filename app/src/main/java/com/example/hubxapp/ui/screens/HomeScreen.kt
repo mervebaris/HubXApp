@@ -15,7 +15,7 @@ import com.example.hubxapp.ui.viewmodel.HomeScreenViewModel
 fun HomeScreen(homeScreenViewModel: HomeScreenViewModel) {
 
     Column(modifier = Modifier.fillMaxSize()) {
-        HeaderSection()
+        HeaderSection(homeScreenViewModel = homeScreenViewModel)
         PromotionSection()
         QuestionsSection(homeScreenViewModel = homeScreenViewModel)
         CategoriesSection(homeScreenViewModel = homeScreenViewModel)

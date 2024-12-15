@@ -20,27 +20,30 @@ import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.hubxapp.R
 import com.example.hubxapp.ui.theme.Black
 import com.example.hubxapp.ui.theme.LightGray
+import com.example.hubxapp.ui.viewmodel.HomeScreenViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HeaderSection(){
-    val searchQuery = remember { mutableStateOf("") }
+fun HeaderSection(homeScreenViewModel: HomeScreenViewModel){
+    val searchCategories = rememberSaveable { mutableStateOf("") }
     Box(
         modifier = Modifier
             .fillMaxWidth()
             .padding(bottom = 8.dp)
-            .height(150.dp)
+            .height(165.dp)
     ) {
         Image(
             painter = painterResource(id = R.drawable.plant),
@@ -69,13 +72,14 @@ fun HeaderSection(){
                 fontSize = 24.sp
             )
             OutlinedTextField(
-                value = searchQuery.value,
-                onValueChange = { searchQuery.value = it },
-                modifier = Modifier
-                    .fillMaxWidth(),
+                value = searchCategories.value,
+                onValueChange = { searchQuery ->
+                    searchCategories.value = searchQuery
+                    homeScreenViewModel.searchCategories(searchQuery)
+                },
+                modifier = Modifier.fillMaxWidth(),
                 label = {
-                    Text(stringResource(id = R.string.searchText))
-                        },
+                    Text(stringResource(id = R.string.searchText))},
                 singleLine = true,
                 leadingIcon = {
                     Icon(
