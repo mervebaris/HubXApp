@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">HubX App</string>
+    <string name="headerText1">Hi, plant lover!</string>
+    <string name="headerText2">Good Afternoon!</string>
+    <string name="searchText">Search for plants</string>
+    <string name="promotionText1">FREE Premium Available</string>
+    <string name="promotionText2">Tap to upgrade your account!</string>
+    <string name="cardText">Image failed to load</string>
+    <string name="home">Home</string>
+    <string name="diagnose">Diagnose</string>
+    <string name="myGarden">My Garden</string>
+    <string name="profile">Profile</string>
+</resources>

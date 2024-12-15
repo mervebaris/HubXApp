@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    //Project color scheme
+    <color name="title">#13231B</color>
+    <color name="searchText">#AFAFAF</color>
+    <color name="cardDark">#24201A</color>
+    <color name="cardDarkText1">#E5C990</color>
+    <color name="cardDarkText2">#E4B046</color>
+    <color name="cardDarkIcon">#D0B070</color>
+    <color name="bottomBarSelected">#28AF6E</color>
+    <color name="bottomBarUnselected">#BDBDBD</color>
+    <color name="bottomBarBox1">#28AF6E</color>
+    <color name="bottomBarBox2">#2CCC80</color>
+</resources>
