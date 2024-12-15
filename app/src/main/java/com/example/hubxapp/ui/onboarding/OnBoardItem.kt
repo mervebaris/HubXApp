@@ -39,15 +39,15 @@ import com.example.hubxapp.ui.theme.White
 import kotlinx.coroutines.launch
 
 
-//Görüntülenen sayfa tasarımı onBoardModel içeriği ile beslenir.
+//The displayed page design is populated with the content of the onBoardModel
 @Composable
 fun OnBoardItem(onBoardModel: OnBoardModel, pagerState:PagerState) {
     val coroutineScope = rememberCoroutineScope()
 
     Column(modifier = Modifier.fillMaxSize()) {
 
-        //Resim,Başlık ve Altbaşlık Alanı
-        //Başlık ve Altbaşlık resmi üzerinde duruyor ve ekranda %80 yer kaplıyor.
+        //Image, Title, and Subtitle Area
+        //The title and subtitle are placed on the image and occupy 80% of the screen
         Box(
             modifier = Modifier.fillMaxSize().weight(80f),
             contentAlignment = Alignment.TopCenter
@@ -88,7 +88,7 @@ fun OnBoardItem(onBoardModel: OnBoardModel, pagerState:PagerState) {
             }
         }
 
-        //Button,Açıklama ve Indicator Alanı %20 lik alan kaplıyor
+        //The Button, Description, and Indicator Area occupy 20% of the space
         Column(
             modifier = Modifier
                 .fillMaxWidth()
@@ -97,7 +97,7 @@ fun OnBoardItem(onBoardModel: OnBoardModel, pagerState:PagerState) {
         ){
             Button(
                 onClick = {
-                    //Pager sayfa geçişi kodlaması
+                    //Pager page transition coding
                     val nextPage = pagerState.currentPage + 1
                     coroutineScope.launch { pagerState.animateScrollToPage(nextPage) }
                 },
@@ -112,15 +112,15 @@ fun OnBoardItem(onBoardModel: OnBoardModel, pagerState:PagerState) {
             }
 
             if (onBoardModel.description.isEmpty()){
-                //Açıklama yoksa Indicator alanı görünsün.
+                //If there is no description, the Indicator area should be visible
                 Row(
                     horizontalArrangement = Arrangement.Center,
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
-                    //Sayfa sayısına göre indicator üretme
+                    //Generate indicator based on the number of pages
                     repeat(pagerState.pageCount) { index ->
-                        //Kaçıncı sayfada olduğuna göre seçili olanı belirleme
-                        //pagerState.currentPage : güncel sayfa indeks numarasını verir.
+                        //Determine the selected one based on the current page
+                        //pagerState.currentPage : Returns the current page index number
                         val isSelected = pagerState.currentPage == index
                         Box(
                             modifier = Modifier

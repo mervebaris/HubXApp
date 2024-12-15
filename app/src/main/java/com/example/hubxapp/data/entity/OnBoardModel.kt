@@ -1,7 +1,7 @@
 package com.example.hubxapp.data.entity
 
-//Her sayfa için içerik modeli
-//Bu modelden içerikler gösterilecek tabi bütün sayfalar aynı tasarımdaysa
+//Content model for each page
+//Content will be displayed from this model, of course, if all pages have the same design.
 data class OnBoardModel(
     val title: String,
     val subtitle: String,

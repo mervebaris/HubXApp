@@ -1,9 +1,8 @@
 package com.example.hubxapp.ui.viewmodel
 
-import androidx.compose.runtime.mutableStateOf
+
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.example.hubxapp.data.entity.Categories
 import com.example.hubxapp.data.entity.Questions
 import com.example.hubxapp.data.repo.CategoriesRepository

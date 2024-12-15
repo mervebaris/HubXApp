@@ -72,7 +72,7 @@ fun PaywallItem(onBoardModel: OnBoardModel, navController: NavController, onBoar
         ),
     )
 
-    //RadioButton seçenekleri state değişkeni
+    //RadioButton options state variable
     val premiumOption = remember { mutableStateOf(2) }
     val freeTrialAlertVisible = remember { mutableStateOf(false) }
 
@@ -80,9 +80,9 @@ fun PaywallItem(onBoardModel: OnBoardModel, navController: NavController, onBoar
         .fillMaxSize()
         .background(DarkGray)) {
 
-        //Resim Üzerindeki Tasarım Alanı
-        //Başlık,Altbaşlık,LazyRow,RadioButton
-        //%80 yer kaplıyor
+        //Design area on the image
+        //Title, Subtitle, LazyRow, RadioButton
+        //Occupies 80% of the space
         Box(
             modifier = Modifier
                 .fillMaxSize()
@@ -295,12 +295,11 @@ fun PaywallItem(onBoardModel: OnBoardModel, navController: NavController, onBoar
                         }
                     }
                 }
-
             }
         }
 
-        //Altta kalan alan Button ve Açıklama yer alıyor
-        //%20 yer kaplıyor
+        //The remaining space at the bottom contains the Button and Description
+        //Occupies 20% of the space
         Column(
             modifier = Modifier
                 .fillMaxWidth()

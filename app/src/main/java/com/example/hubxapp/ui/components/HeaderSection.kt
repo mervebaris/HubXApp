@@ -92,7 +92,7 @@ fun HeaderSection(homeScreenViewModel: HomeScreenViewModel){
                 },
                 keyboardActions = KeyboardActions(
                     onDone = {
-                        // Arama işlemine tıklandığında yapılacak işlem!!
+                        //Action to be performed when the search button is clicked
                     }
                 ),
                 colors = TextFieldDefaults.outlinedTextFieldColors(

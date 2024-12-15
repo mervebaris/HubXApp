@@ -23,7 +23,6 @@ import com.example.hubxapp.ui.viewmodel.OnBoardScreenViewModel
 fun BottomBarScreen(homeScreenViewModel: HomeScreenViewModel
 ) {
     val selectedItem = remember { mutableStateOf(0) }
-    val items = listOf("Home", "Diagnose", "My Garden", "Profile")
 
     Scaffold(
         bottomBar = {

@@ -11,30 +11,15 @@ val PurpleGrey40 = Color(0xFF625b71)
 val Pink40 = Color(0xFF7D5260)
 
 //My Colors
-val MainColor = Color(0xFF28AF6E) //bottomBarSelected
+val MainColor = Color(0xFF28AF6E)
 val White = Color(0xFFFFFFFF)
-val Black = Color(0xFF13231B) //title
-val LightBlack = Color(0xFF24201A) //cardDark
+val Black = Color(0xFF13231B)
+val LightBlack = Color(0xFF24201A)
 val Gray = Color(0xB213231B)
-val LightGray = Color(0x4013231B) //bottomBarUnselected
+val LightGray = Color(0x4013231B)
 val DarkGray = Color(0xFF131E17)
 val DarkGreen = Color(0xFF26302A)
 val LightGreen = Color(0xB2597165)
 val WhiteTransparent = Color(0x80FFFFFF)
-val Yellow = Color(0xFFE4B046) //cardDarkText2 , cardDarkIcon
-val LightYellow = Color(0xFFE5C990) //cardDarkText1
-
-
-
-
-/*
-<color name="title">#13231B</color>
-<color name="searchText">#AFAFAF</color>
-<color name="cardDark">#24201A</color>
-<color name="cardDarkText1">#E5C990</color>
-<color name="cardDarkText2">#E4B046</color>
-<color name="cardDarkIcon">#D0B070</color>
-<color name="bottomBarSelected">#28AF6E</color>
-<color name="bottomBarUnselected">#BDBDBD</color>
-<color name="bottomBarBox1">#28AF6E</color>
-<color name="bottomBarBox2">#2CCC80</color> */
+val Yellow = Color(0xFFE4B046)
+val LightYellow = Color(0xFFE5C990)

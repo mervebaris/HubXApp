@@ -24,16 +24,16 @@ fun OnboardingScreen(navController: NavController,onBoardScreenViewModel: OnBoar
 
     LaunchedEffect(onBoardView.value) {
         onBoardView.value?.let {
-            if(it.status == 1){//1 : Kullanıcı tarafından daha önce OnboardingScreen'i görüldü.
+            if(it.status == 1){//1: The OnboardingScreen has been viewed by the user before
                 navController.navigate("bottomBarScreen")
-                screenVisible.value = false//Sayfa geçişinde OnboardingScreen'in görünmemesini sağlar.
+                screenVisible.value = false//Ensures that the OnboardingScreen does not appear during page transitions
             }else{
                 screenVisible.value = true
             }
         }
     }
 
-    //Sayfa içerikleri listesi
+    //Page content list
     val pages = listOf(
         OnBoardModel(
             title = "Welcome to PlantApp",
@@ -64,11 +64,11 @@ fun OnboardingScreen(navController: NavController,onBoardScreenViewModel: OnBoar
             description = "After the 3-day free trial period you’ll be charged ₺274.99 per year unless you cancel before the trial expires. Yearly Subscription is Auto-Renewable \nTerms  •  Privacy  •  Restore",
         )
     )
-    //Sayfaların hareketini yöneten tanımlama
-    //initialPage : başlanılacak sayfa
-    //pageCount : toplam sayfa sayısı
+    //Definition that manages the movement of pages
+    //initialPage : Starting page
+    //pageCount : Total number of pages
     val pagerState = rememberPagerState(initialPage = 0, pageCount = { 4 })
-    //Button benzeri bir tıklama ile sayfa geçişini sağlayan kodlama
+    //Coding that enables page transition with a button-like click
     val lastPageIndex = pagerState.pageCount-1
 
     if (screenVisible.value){
